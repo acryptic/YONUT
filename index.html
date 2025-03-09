@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Trainers Showcase</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        model-viewer {
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            margin: auto;
+            display: block;
+            background-color: white;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>3D Trainers Showcase</h1>
+
+    <!-- Main 3D Model Viewer -->
+    <model-viewer id="modelViewer"
+        src="trainer1.glb"
+        alt="3D Trainer"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1">
+    </model-viewer>
+
+    <!-- Buttons to Switch Models -->
+    <div class="button-container">
+        <button onclick="changeModel('trainer1.glb')">Trainer 1</button>
+        <button onclick="changeModel('trainer2.glb')">Trainer 2</button>
+        <button onclick="changeModel('trainer3.glb')">Trainer 3</button>
+    </div>
+
+    <script>
+        function changeModel(modelPath) {
+            document.getElementById("modelViewer").setAttribute("src", modelPath);
+        }
+    </script>
+
+</body>
+</html>
